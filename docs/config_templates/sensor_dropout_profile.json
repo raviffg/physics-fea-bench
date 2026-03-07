@@ -1,0 +1,14 @@
+{
+  "_template": "Sensor dropout profile",
+  "project": "physics-fea-bench",
+  "purpose": "Configuration template for headless structural and cold-plate thermal FEA evaluation",
+  "status": "template_only_not_a_validated_operating_profile",
+  "source_of_truth": "Confirm supported keys against the current implementation before use.",
+  "parameters": {},
+  "metadata": {
+    "revision": "",
+    "created_utc": "",
+    "owner": "",
+    "notes": "Do not use for hardware deployment until reviewed."
+  }
+}
