@@ -1,0 +1,40 @@
+{
+  "benchmark": "bracket_static_buckle_v1",
+  "part": "machined 6061-T6 mounting bracket, 2x M6 fillet notch",
+  "load_case": {
+    "constraint": "4x bolt pads fully fixed",
+    "load_n": 1000.0,
+    "direction": "Z-",
+    "nominal_stress_mpa": 41.2,
+    "yield_mpa": 276.0
+  },
+  "ground_truth": {
+    "solver": "CalculiX 2.21 / C3D10",
+    "n_nodes": 184320,
+    "n_elements": 121447,
+    "sigma_vm_peak_mpa": 118.4,
+    "kt": 2.87,
+    "buckle_multipliers": [3.412, 4.108, 5.773, 7.021],
+    "verdict": "pass"
+  },
+  "failure_trap": {
+    "solver": "CalculiX 2.21 / C3D4 linear tets",
+    "n_nodes": 21408,
+    "n_elements": 110932,
+    "sigma_vm_peak_mpa": 71.6,
+    "kt": 1.74,
+    "buckle_multipliers": [3.388],
+    "verdict": "pass",
+    "trap": "Linear tets under-predict the notch peak by 39.5%. Kt reads 1.74 instead of 2.87, so the part clears every gate and ships, then cracks in fatigue at 4.1e5 cycles."
+  },
+  "acceptance_gates": {
+    "sigma_vm_peak_mpa_max": 165.6,
+    "kt_max": 3.0,
+    "buckle_multiplier_min": 1.5
+  },
+  "delta": {
+    "sigma_vm_peak_mpa_pct": -39.5,
+    "kt_pct": -39.4,
+    "buckle_modes_resolved": 1
+  }
+}
