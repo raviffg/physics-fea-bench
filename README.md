@@ -36,10 +36,3 @@ Most FEA regressions are not solver bugs. They are element order, mesh density a
 a fillet, or a boundary condition that quietly removes the load path. All three
 pass a convergence check. The benchmark encodes the wrong answer next to the
 right one so the grader is scored on catching it, not on matching it.
-
-
-## Expanded project documentation
-
-The `docs/` directory contains project-specific design notes, verification scenario specifications, operations guides, data contracts, configuration templates, safety notes, and project reference templates.
-
-**Important:** added documents are planning and review aids. They do not claim that tests have been executed, that placeholder configurations are supported runtime profiles, or that this project is certified for physical/clinical/production deployment. Confirm interfaces and limits against implementation and measured evidence.
